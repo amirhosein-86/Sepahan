@@ -1,0 +1,83 @@
+/*
+ * Flowplayer HTML5 quality selector plugin
+ *
+ * Copyright (c) 2016, Flowplayer Oy
+ *
+ * Released under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * revision: a0ee936
+ */
+.flowplayer.is-mouseout .fp-quality-selector {
+	display : none;
+}
+.flowplayer.is-mouseover .fp-quality-selector {
+	display : block;
+}
+.flowplayer .fp-quality-selector {
+    overflow-y: hidden;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 2px;
+    height : 0px;
+    width: 70px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: bold;
+}
+@media(min-width:769px) {
+    .flowplayer .fp-quality-selector {
+        right: 120px;
+    }
+}
+@media(max-width:768px) {
+    .flowplayer .fp-quality-selector {
+        right: 10px;
+    }
+
+    .flowplayer .fp-volume {
+        display: none;
+    }
+}
+.flowplayer .fp-quality-selector li {
+    display: block;
+    list-style: none;
+    background-color: #333;
+    background-color: rgba(0,167,200,0.6);
+    margin: 5px;
+    font : 12px/20px tahoma;
+    height : 22px;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: 0px 0px 2px #000;
+    overflow: hidden;
+    text-align: center;
+}
+.flowplayer .fp-quality-selector li.active {
+    background-color: #00a7c8;
+    background-color: rgba(0,167,200,0.6);
+    cursor: default;
+}
+.flowplayer .fp-quality-selector li.active:hover {
+    background-color: #00a7c8;
+    background-color: rgba(0,167,200,0.6);
+}
+.flowplayer .fp-quality-selector li:hover {
+    background-color: #444;
+    background-color: rgba(0,167,200,0.8);
+}
+.flowplayer.is-mouseover .fp-quality-selector {
+    height: 27px;
+}
+.flowplayer.is-finished .fp-quality-selector,
+.flowplayer.is-disabled .fp-quality-selector {
+    height: 0px !important;
+}
+
+.flowplayer > a:last-child {
+    height: 0 !important;
+}
